@@ -33,11 +33,11 @@ class Store
   attr_reader :name, :color, :brand, :price
   attr_writer :price
 
-  def initialize(name, color, brand, price)
-    @name = name
-    @color = color
-    @brand = brand
-    @price = price
+  def initialize(input_options)
+    @name = input_options[:name]
+    @color = input_options[:color]
+    @brand = input_options[:brand]
+    @price = input_options[:price]
   end
 
   def item_info
@@ -45,9 +45,9 @@ class Store
   end
 end
 
-item1 = Store.new("T-shirt", "red", "Hanes", "9.99")
-item2 = Store.new("T-shirt", "blue", "Volcom", "10.99")
-item3 = Store.new("T-shirt", "black", "Nike", "24.99")
+item1 = Store.new({ :name => "T-shirt", :color => "red", :brand => "Hanes", :price => "9.99" })
+item2 = Store.new({ :name => "T-shirt", :color => "blue", :brand => "Volcom", :price => "10.99" })
+item3 = Store.new({ :name => "T-shirt", :color => "black", :brand => "Nike", :price => "24.99" })
 
 p item1
 p item2
